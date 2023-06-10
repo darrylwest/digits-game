@@ -6,6 +6,7 @@
 # import argparse
 
 # parse the target and array of variables
+
 def sums(target, lst, idx, jdx):
     while  True:
         j = target - (sum(lst) - lst[jdx])
