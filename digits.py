@@ -10,6 +10,7 @@ from collections import namedtuple
 
 Pair = namedtuple('Pair', 'a b')
 Factors = namedtuple('Factors', 'target pairs')
+Game = namedtuple('Game', 'target numbers factors')
 
 def factor(target):
     pairs = []
@@ -22,8 +23,17 @@ def factor(target):
 
     return factors
 
+def parse_args():
+    game = Game(271, [3,4,6,7,8,11], None)
+    print(f'game: {game}')
+
+    return game
+    
 def main():
-    factors = factor(128)
+    # parse to get the startup game
+    game = parse_args()
+
+    factors = factor(game.target)
     print(f'factors: {factors}')
 
 if __name__ == '__main__':
