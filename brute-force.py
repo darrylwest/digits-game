@@ -18,10 +18,21 @@ def sums(target, lst, idx, jdx):
 
 def brute_force(target):
     print(f'brute force: {target}')
-    lst = [1,2,3,4,5,85]
+
+    n = 5
     idx = 4
     jdx = 5
-    sums(target, lst, idx, jdx)
+
+    while True:
+        lst = [1,2,3,n,n+1,0]
+        sums(target, lst[:], idx, jdx)
+
+        n = n + 1
+        lst[idx] = lst[idx] + 1
+        lst[jdx] = n + 2
+
+        if (sum(lst) >= target):
+            break
 
 
 def main():
