@@ -13,8 +13,10 @@ Factors = namedtuple('Factors', 'target pairs')
 Game = namedtuple('Game', 'target digits factors')
 
 def parse_args():
-    game = Game(131, [2,3,7,9,11,25], [])
+    # game = Game(131, [2,3,7,9,11,25], [])
     # game = Game(271, [3,4,6,7,8,11], [])
+    # game = Game(315, [3,7,8,9,11,25], [])
+    game = Game(453, [8,12,13,15,20,23], [])
 
     return game
     
@@ -38,14 +40,15 @@ def factor(target):
 def show_pairs(pairs):
     lst = []
     for p in pairs:
-        # print(p)
         lst.append(f'{p.a} * {p.b}')
 
     return lst
         
 
 def show_factors(target, digits, factors):
-    print(target, factors.target, (target - factors.target))
+    n = target - factors.target
+    digits = [x for x in digits if x != abs(n) ]
+    print(target, factors.target, n, digits)
     for pair in factors.pairs:
         if (pair.a in digits):
             lst = show_pairs(factor(pair.b).pairs)
