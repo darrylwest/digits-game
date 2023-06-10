@@ -1,9 +1,10 @@
 # Digits Game
 
-## What we know
+## Known
 
 * target numbers are 2 or 3 digit integers, 50..999
 * pool of numbers is always 6, unique counting numbers 1..99
+* the number values in the pool are usually < 30
 * it usually takes 4 terms to get to the solution
 * more than likely the highest numbers should be multiplied by a lesser number
 
@@ -32,8 +33,6 @@
 * use the remaining digits to see if there is a combination to get to the difference target
 * repeat
 
-
-
 ## Brute Force Dictionary Algorithm
 
 *Note: its unlikely that a simple addition would ever be possible for the digits game*
@@ -41,9 +40,8 @@
 * create a dictionary of targets between 50..999
 * determine every possible product/sum for each target given 6 unique digits 1..99
 
-
 ## References
 
 [graph of game plays](https://www.desmos.com/calculator/gsozkpvp6o)
 
-###### darryl.west | 2023.06.10
+###### darryl.west | 2023.06.10a

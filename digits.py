@@ -74,5 +74,14 @@ def main():
 
     show_game(game)
 
+    print("\nlargest factors -------------")
+    v = game.digits[:].pop()
+    for n in game.digits[:5]:
+        p = n*v
+        r = game.target - p
+        nums = [x for x in game.digits if x not in [v, n] ]
+        print(f"{n} * {v} = {p} {r} {nums}")
+        
+
 if __name__ == '__main__':
     main()
