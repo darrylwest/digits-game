@@ -16,7 +16,8 @@ def parse_args():
     # game = Game(76, [1,2,3,4,10,25], [])
     # game = Game(131, [2,3,7,9,11,25], [])
     # game = Game(271, [3,4,6,7,8,11], [])
-    game = Game(312, [4,7,8,9,14,20], [])
+    # game = Game(312, [4,7,8,9,14,20], [])
+    game = Game(55, [2,3,7,9,10,15], [])
     # game = Game(315, [3,7,8,9,11,25], [])
     # game = Game(453, [8,12,13,15,20,23], [])
 
@@ -82,9 +83,14 @@ def main():
         p = n*v
         r = game.target - p
         nums = [x for x in game.digits if x not in [v, n] ]
-        # try to resolve an answer from the nums list; sum, prod
+        # try to resolve an answer from the nums list; num, sum, prod
+        # first find an r in the list
+        q = [x for x in game.digits if x == r]
+        # find a+n sum = r
+        # find a*n prod = r
 
-        print(f"{n} * {v} = {p} {r} {nums}")
+
+        print(f"{n} * {v} = {p} {r} {nums} : {q}")
         
 
 if __name__ == '__main__':
