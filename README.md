@@ -10,10 +10,7 @@
 
 ## Questions
 
-* target is always larger than any one variable from the list?
-* the sum of the list is always smaller than the target?
-* what would a graph of target and given values look like? a series of graphs?
-* are prime numbers more difficult to resolve?
+* what would a graph of target and given values look like? a series of scatter graphs
 * is the best approach to use product and addition, then subtraction and division?
 * division is tricky because if the result isn't an integer, it's useless, right?
 

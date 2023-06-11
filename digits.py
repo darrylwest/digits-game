@@ -13,10 +13,12 @@ Factors = namedtuple('Factors', 'target pairs')
 Game = namedtuple('Game', 'target digits factors')
 
 def parse_args():
+    # game = Game(76, [1,2,3,4,10,25], [])
     # game = Game(131, [2,3,7,9,11,25], [])
     # game = Game(271, [3,4,6,7,8,11], [])
+    game = Game(312, [4,7,8,9,14,20], [])
     # game = Game(315, [3,7,8,9,11,25], [])
-    game = Game(453, [8,12,13,15,20,23], [])
+    # game = Game(453, [8,12,13,15,20,23], [])
 
     return game
     
@@ -80,6 +82,8 @@ def main():
         p = n*v
         r = game.target - p
         nums = [x for x in game.digits if x not in [v, n] ]
+        # try to resolve an answer from the nums list; sum, prod
+
         print(f"{n} * {v} = {p} {r} {nums}")
         
 
