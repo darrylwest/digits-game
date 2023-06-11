@@ -82,7 +82,7 @@ def run(game):
         game.factors.append(factor(game.target + n))
         game.factors.append(factor(game.target - n))
 
-    show_game(game)
+    # show_game(game)
 
     print("\nlargest factors -------------")
     v = game.digits[:].pop()

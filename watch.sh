@@ -6,7 +6,7 @@
 set -eu
 
 target=digits.py
-target=short.py
+target=solve-digits.py
 
 watchexec -w $target -d 500 -c ./$target
 
