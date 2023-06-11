@@ -5,7 +5,10 @@
 
 set -eu
 
-watchexec -w digits.py -d 500 -c ./digits.py
+target=digits.py
+target=short.py
+
+watchexec -w $target -d 500 -c ./$target
 
 exit $?
 

@@ -76,11 +76,8 @@ def show_game(game):
     print(f'Digits: {game.target}: {game.digits}' )
     for f in game.factors:
         show_factors(game.target, game.digits, f)
-    
-def main():
-    # parse to get the startup game
-    game = parse_args()
 
+def run(game):
     for n in game.digits:
         game.factors.append(factor(game.target + n))
         game.factors.append(factor(game.target - n))
@@ -98,10 +95,12 @@ def main():
         q = [x for x in game.digits if x == r]
         # find a+n sum = r
         # find a*n prod = r
-
-
         print(f"{n} * {v} = {p} {r} {nums} : {q}")
-        
+
+def main():
+    # parse to get the startup game
+    game = parse_args()
+    run(game)
 
 if __name__ == '__main__':
     main()
