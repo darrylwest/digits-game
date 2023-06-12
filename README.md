@@ -4,6 +4,15 @@
 
 With help from itertools the implementation uses 
 
+USE: `solve-digits -t target -n numbers`
+
+## Bugs / Improvements
+
+* [ ] if there is a result that starts with a negative number, switch it to be at the end of the equation (negative numbers not possible in the game)
+* [ ] parse and group the result to ensure it works correctly with the game.
+* [ ] should create a UI for this app
+* [ ] should log all results to keep track of game plays
+
 ## Known
 
 * large targets sometimes require three terms as products (see day 3 game 4)
@@ -16,5 +25,6 @@ With help from itertools the implementation uses
 
 [graph of game plays](https://www.desmos.com/calculator/gsozkpvp6o)
 [itertools](https://docs.python.org/3/library/itertools.html)
+[the game](https://www.nytimes.com/games/digits)
 
-###### darryl.west | 2023.06.11
+###### darryl.west | 2023.06.12
