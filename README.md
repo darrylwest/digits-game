@@ -54,5 +54,6 @@ Source: Conversation with Bing, 6/12/2023
 * [graph of game plays](https://www.desmos.com/calculator/gsozkpvp6o)
 * [itertools](https://docs.python.org/3/library/itertools.html)
 * [the game](https://www.nytimes.com/games/digits)
+* [javascript fetch](https://javascript.info/fetch)
 
 ###### darryl.west | 2023.06.12
