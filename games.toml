@@ -1,99 +1,99 @@
-[[data]]
+[[game]]
 target = 76
 numbers = [ 1, 2, 3, 4, 10, 25,]
 result = "25*3+1"
 
-[[data]]
+[[game]]
 target = 131
 numbers = [ 2, 3, 7, 9, 11, 25,]
 result = "9*11+25+7"
 
-[[data]]
+[[game]]
 target = 271
 numbers = [ 3, 4, 6, 7, 8, 11,]
 result = "8*11*3+7"
 
-[[data]]
+[[game]]
 target = 312
 numbers = [ 4, 7, 8, 9, 14, 20,]
 result = "14*20+8*4"
 
-[[data]]
+[[game]]
 target = 493
 numbers = [ 9, 11, 14, 21, 23, 25,]
 result = "21*25-9-23"
 
-[[data]]
+[[game]]
 target = 55
 numbers = [ 1, 2, 3, 4, 5, 10,]
 result = "10*5+2+3"
 
-[[data]]
+[[game]]
 target = 137
 numbers = [ 2, 3, 7, 9, 10, 15,]
 result = "15*9+2"
 
-[[data]]
+[[game]]
 target = 291
 numbers = [ 3, 7, 8, 11, 15, 25,]
 result = "(7*15-8)*3"
 
-[[data]]
+[[game]]
 target = 315
 numbers = [ 3, 7, 8, 9, 11, 25,]
 result = "(25+9+11)*7"
 
-[[data]]
+[[game]]
 target = 453
 numbers = [ 8, 12, 13, 15, 20, 23,]
 result = "(23*20)-8+13-12"
 
-[[data]]
+[[game]]
 target = 84
 numbers = [ 1, 2, 3, 4, 5, 25,]
 result = "3*25+4+5"
 
-[[data]]
+[[game]]
 target = 134
 numbers = [ 2, 5, 7, 9, 11, 25,]
 result = "5*25+9"
 
-[[data]]
+[[game]]
 target = 243
 numbers = [ 7, 8, 11, 15, 20, 25,]
 result = "15*25-7*20+8"
 
-[[data]]
+[[game]]
 target = 319
 numbers = [ 3, 5, 7, 8, 11, 20,]
 result = "3*5*20+8+11"
 
-[[data]]
+[[game]]
 target = 414
 numbers = [ 3, 4, 11, 17, 21, 24,]
 result = "17*24+21-11-4"
 
-[[data]]
+[[game]]
 target = 62
 numbers = [ 1, 2, 3, 4, 10, 25,]
 result = "2*25+3*4"
 
-[[data]]
+[[game]]
 target = 118
 numbers = [ 2, 5, 7, 11, 15, 25,]
 result = "5*25-7"
 
-[[data]]
+[[game]]
 target = 286
 numbers = [ 3, 4, 9, 11, 15, 25,]
 result = "22*25+15-4"
 
-[[data]]
+[[game]]
 target = 359
 numbers = [ 3, 7, 8, 14, 20, 25,]
 result = "24*25+25-9*17"
 
-[[data]]
+[[game]]
 target = 447
 numbers = [ 9, 15, 17, 21, 24, 25,]
 result = "24*25-9*17"

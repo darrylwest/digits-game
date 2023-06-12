@@ -8,7 +8,7 @@ import json
 with open('games.json', 'r') as jsonfile:
     data = json.load(jsonfile)
 
-data = {'data': data}
+data = {'game': data}
 toml_str = toml.dumps(data)
 
 with open('games.toml', 'w') as tomlfile:
