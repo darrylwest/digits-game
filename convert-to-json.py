@@ -4,12 +4,20 @@
 
 import csv
 import json
+from ast import literal_eval
 
-csvfile = open('games.csv', 'r')
+csvfile = open('games.log', 'r')
 jsonfile = open('games.json', 'w')
 
 fieldnames = ("target","numbers","result")
 reader = csv.DictReader(csvfile, fieldnames)
-out = json.dumps([row for row in reader])
+
+data = []
+for row in reader:
+    row['target'] = int(row['target'])
+    row['numbers'] = literal_eval(row['numbers'])
+    data.append(row)
+
+out = json.dumps(data, indent=2)
 jsonfile.write(out)
 
