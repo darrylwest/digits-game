@@ -21,6 +21,16 @@ USE: `solve-digits -t target -n numbers`
 * it usually takes 4 terms to get to the solution
 * more than likely the highest numbers should be multiplied by a lesser number
 
+## Web Application(s) and API
+
+* [ ] must support async, web sockets, http2
+* [ ] enable separation between API backend and web, mobile, desktop front ends
+* [ ] initial API should accept target/numbers and return result equation
+* [ ] enhance to generate new games
+
+[Async Web Frameworks](https://geekflare.com/python-asynchronous-web-frameworks/)
+[FastAPI](https://fastapi.tiangolo.com/)
+
 ## References
 
 [graph of game plays](https://www.desmos.com/calculator/gsozkpvp6o)
