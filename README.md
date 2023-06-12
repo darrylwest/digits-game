@@ -42,11 +42,12 @@ Source: Conversation with Bing, 6/12/2023
 (6) fastapi · PyPI. https://pypi.org/project/fastapi/.
 (7) The Most Popular Python Web Frameworks in 2021 - Scout APM. https://scoutapm.com/blog/the-most-popular-python-web-frameworks-in-2020.
 
-* [Async Web Frameworks](https://geekflare.com/python-asynchronous-web-frameworks/)
 * [FastAPI](https://fastapi.tiangolo.com/)
+* [Animate.css](https://animate.style/)
 * [Wiki](https://en.wikipedia.org/wiki/FastAPI)
 * [Popularity](https://www.linkedin.com/pulse/pros-cons-fastapi-digi2world)
 * [PyPi reference](https://www.linkedin.com/pulse/pros-cons-fastapi-digi2world)
+* [Async Web Frameworks](https://geekflare.com/python-asynchronous-web-frameworks/)
 
 ## References
 
