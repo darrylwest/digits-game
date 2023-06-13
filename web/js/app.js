@@ -12,6 +12,15 @@ const app = { };
 
 app.version = () => APP_VERSION;
 
+async function ping() {
+    console.log("ping the app server");
+
+    const response = await fetch('http://127.0.0.1:9890/');
+    console.log(response);
+    const jdata = await response.json();
+    console.log(jdata);
+};
+
 app.post = (target, numbers) => {
     console.log("post the target/numbers", target, numbers);
 
