@@ -5,7 +5,7 @@
 
 set -eu
 
-HOST="$LOCAL_IP:9890"
+HOST='127.0.0.1:9890'
 
 curl -X 'GET' "http://$HOST/items/56893?q=1%2C2%2C3%2C4%2C5%2C6" -H 'accept: application/json'
 

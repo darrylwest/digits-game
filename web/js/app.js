@@ -21,6 +21,11 @@ async function ping() {
     console.log(jdata);
 };
 
+async function solve(target, numbers) {
+    const response = await fetch('http://127.0.0.1:9890/problems');
+
+}
+
 app.post = (target, numbers) => {
     console.log("post the target/numbers", target, numbers);
 

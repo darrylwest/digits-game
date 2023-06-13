@@ -5,7 +5,7 @@
 
 set -eu
 
-HOST="$LOCAL_IP:9890/"
+HOST='127.0.0.1:9890'
 
 curl -X 'GET' "http://$HOST" 
 
