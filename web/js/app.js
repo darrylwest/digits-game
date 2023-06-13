@@ -7,7 +7,6 @@ const numbersInput = document.querySelector('#numbersInput');
 const resultOutput = document.querySelector('#resultOutput');
 const footerMessage = document.querySelector('#footerMessage');
 
-
 // application namespace
 const app = { };
 
@@ -16,12 +15,30 @@ app.version = () => APP_VERSION;
 app.post = (target, numbers) => {
     console.log("post the target/numbers", target, numbers);
 
-    setTimeout(() => {
-        console.log("posting")
-        resultOutput.innerHTML = "Result: 5*3+16*3";
-        submitButton.disabled = false;
-        submitButton.value = "Solve"
-    }, 1000);
+    data = { target, numbers };
+    console.log("posting", data);
+
+    resultOutput.innerHTML = "";
+
+    fetch('/solve', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        resultOutput.innerHTML = "ya";
+      })
+      .catch(error => {
+        console.error(error)
+        resultOutput.innerHTML = error;
+      });
+
+    submitButton.disabled = false;
+    submitButton.value = "Solve"
 };
 
 app.parse_target = (value) => {
