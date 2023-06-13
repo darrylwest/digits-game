@@ -7,5 +7,7 @@ set -eu
 
 cd web
 
-python3 -m http.server 3000
+# should replace this with caddy proxy with certs to prepare for production
+
+python3 -m http.server 9800
 

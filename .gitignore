@@ -1,2 +1,5 @@
 tmp
-web/__pycache__/
+server/__pycache__
+server/__pycache__/*
+web/__pycache__/*
+__pycache__*
