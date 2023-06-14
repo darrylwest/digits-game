@@ -1,4 +1,4 @@
-const APP_VERSION = "0.2.7"
+const APP_VERSION = "0.2.15"
 
 // define the components
 const submitButton = document.querySelector('#submit-button');
@@ -7,25 +7,38 @@ const numbersInput = document.querySelector('#numbersInput');
 const resultOutput = document.querySelector('#resultOutput');
 const footerMessage = document.querySelector('#footerMessage');
 
-targetInput.value = "271";
-numbersInput.value = "3 4 6 7 8 11";
 
 // application namespace
 const app = { };
 
 app.version = () => APP_VERSION;
 
-async function ping() {
+app.test = () => {
+    targetInput.value = "271";
+    numbersInput.value = "3 4 6 7 8 11";
+
+    app.click_handler();
+}
+
+app.get_url = (endpoint) => {
+    const url = window.origin.replace("9800", "9890");
+
+    return url + endpoint;
+}
+
+app.ping = async () => {
     console.log("ping the app server");
 
-    const response = await fetch('http://127.0.0.1:9890/');
+    const url = app.get_url("/");
+
+    const response = await fetch(url);
     console.log(response);
     const jdata = await response.json();
     console.log(jdata);
 }
 
 app.solve = (data = {}) => {
-    url = 'http://127.0.0.1:9890/problems';
+    const url = app.get_url("/problems");
     console.log(url, data);
 
     fetch(url, {
@@ -79,7 +92,7 @@ app.parse_numbers = (value) => {
     return numbers;
 };
 
-submitButton.addEventListener('click', () => {
+app.click_handler = () => {
     console.log("submit button click");
     submitButton.disabled = true;
     submitButton.value = "Working..."
@@ -95,7 +108,10 @@ submitButton.addEventListener('click', () => {
         submitButton.disabled = false;
         submitButton.value = "Solve"
     }
+};
 
+submitButton.addEventListener('click', () => {
+    app.click_handler();
 });
 
 footerMessage.innerHTML = "Copyright (c) 2023, Version: " + APP_VERSION;

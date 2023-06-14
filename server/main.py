@@ -11,7 +11,13 @@ class Problem(BaseModel):
     
 app = FastAPI()
 
-origins = [ "http://localhost", "http://localhost:9800", ]
+# todo: read this from config file
+origins = [ 
+    "http://localhost",
+    "http://localhost:9800",
+    "http://plaza.local",
+    "http://plaza.local:9800",
+]
 
 app.add_middleware(
     CORSMiddleware,

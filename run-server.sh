@@ -5,8 +5,8 @@
 
 set -eu
 
-# HOST=$LOCAL_IP
-HOST=127.0.0.1
+HOST=$LOCAL_IP
+# HOST=127.0.0.1
 
 # --workers 4 # this is ignored when --reload is used
 
