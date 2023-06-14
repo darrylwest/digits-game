@@ -1,4 +1,4 @@
-const APP_VERSION = "0.1.10"
+const APP_VERSION = "0.2.7"
 
 // define the components
 const submitButton = document.querySelector('#submit-button');
@@ -24,11 +24,11 @@ async function ping() {
     console.log(jdata);
 }
 
-async function solve(data = {}) {
+app.solve = (data = {}) => {
     url = 'http://127.0.0.1:9890/problems';
     console.log(url, data);
 
-    const response = await fetch(url, {
+    fetch(url, {
       method: "POST",
       mode: "cors",
       cache: "no-cache",
@@ -39,22 +39,18 @@ async function solve(data = {}) {
       redirect: "follow",
       body: JSON.stringify(data),
     })
+    .then(response => response.json())
+    .then(result => {
+        console.log(result);
+        submitButton.disabled = false;
+        submitButton.value = "Solve"
 
-    if (!response.ok) {
-        resultOutput.innerHTML = response.statusText;
-        throw new Error(response.statusText)
-    }
-
-    const contentType = response.headers.get("content-type");
-    console.log(contentType);
-    if (!contentType || !contentType.includes("application/json")) {
-        resultOutput.innerHTML = "not json!";
-        throw new TypeError("Oops, we haven't got JSON!");
-    }
-
-    const json = await response.json();
-
-    return json;
+        resultOutput.innerHTML = result.result;
+    })
+    .catch(error => {
+        resultOutput.innerHTML = error;
+        throw new Error(error)
+    });
 }
 
 app.post = (target, numbers) => {
@@ -63,10 +59,7 @@ app.post = (target, numbers) => {
     data = { target, numbers };
     console.log("posting", data);
 
-    let response = solve(data);
-    console.log('response: ', response);
-
-    resultOutput.innerHTML = response.message;
+    app.solve(data);
 };
 
 app.parse_target = (value) => {
