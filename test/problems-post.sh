@@ -5,7 +5,8 @@
 
 set -eu
 
-HOST='127.0.0.1:9890'
+export HOST="${LOCAL_IP}:9890"
+printf $HOST
 
 curl -X 'POST' \
   "http://$HOST/problems" \

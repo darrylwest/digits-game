@@ -5,6 +5,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from itertools import permutations, product
 
+import logging as log
+# from fastapi.logger import logger as log
+
+log.basicConfig(level=log.INFO)
+
 class Problem(BaseModel):
     target: int
     numbers: list
@@ -36,11 +41,13 @@ async def home():
 @app.post("/problems")
 async def solve(problem: Problem):
     # todo: add console logging
-    print(problem)
+    # print(problem)
+    log.info(problem)
 
     # todo: implement digit_solver()
     result = digit_solver(problem.target, problem.numbers)
-    print(result)
+    # print(result)
+    log.info(result)
 
     return {"result": result}
 
