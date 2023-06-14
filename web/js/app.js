@@ -19,11 +19,22 @@ async function ping() {
     console.log(response);
     const jdata = await response.json();
     console.log(jdata);
-};
+}
 
-async function solve(target, numbers) {
-    const response = await fetch('http://127.0.0.1:9890/problems');
+async function solve(data = {}) {
+    url = 'http://127.0.0.1:9890/problems');
+    const response = await fetch(url, {
+      method: "POST",
+      mode: "cors",
+      cache: "no-cache",
+      headers: {
+        "Content-Type": "application/jason",
+      },
+      redirect: "follow",
+      body: JSON.stringify(data),
+    });
 
+    return response.json();
 }
 
 app.post = (target, numbers) => {
@@ -32,27 +43,7 @@ app.post = (target, numbers) => {
     data = { target, numbers };
     console.log("posting", data);
 
-    resultOutput.innerHTML = "";
-
-    fetch('/solve', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-        resultOutput.innerHTML = "ya";
-      })
-      .catch(error => {
-        console.error(error)
-        resultOutput.innerHTML = error;
-      });
-
-    submitButton.disabled = false;
-    submitButton.value = "Solve"
+    solve(data);
 };
 
 app.parse_target = (value) => {

@@ -3,6 +3,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from itertools import permutations, product
 
 class Problem(BaseModel):
     target: int
@@ -30,5 +31,33 @@ async def solve(problem: Problem):
     print(problem)
 
     # todo: implement digit_solver()
+    result = digit_solver(problem.target, problem.numbers)
+    print(result)
 
-    return {"result": "2432"}
+    return {"result": result}
+
+
+
+def find_operations(numbers, target):
+    operations = ['+', '-', '*']
+    for n in range(1, len(numbers)+1):
+        for nums in permutations(numbers, n):
+            for ops in product(operations, repeat=n-1):
+                equation = f"{nums[0]}"
+                for i in range(n-1):
+                    equation += f"{ops[i]}{nums[i+1]}"
+                if eval(equation) == target:
+                    return equation
+                equation = f"-{nums[0]}"
+                for i in range(n-1):
+                    equation += f"{ops[i]}{nums[i+1]}"
+                if eval(equation) == target:
+                    return equation
+    return None
+
+def digit_solver(target, numbers):
+    result = find_operations(numbers, target)
+    if result:
+        return(f"{result} = {target}")
+    else:
+        return(f"No combination of operations found for {numbers} to equal {target}")

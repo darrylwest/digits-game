@@ -12,7 +12,6 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "target": 414,
-  "numbers": [1, 2, 3, 4, 20, 25]
+  "target": 271,
+  "numbers": [2, 3, 7, 9, 11, 25]
 }'
-
