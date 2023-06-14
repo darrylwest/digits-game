@@ -1,4 +1,4 @@
-const APP_VERSION = "0.1.8"
+const APP_VERSION = "0.1.10"
 
 // define the components
 const submitButton = document.querySelector('#submit-button');
@@ -38,11 +38,23 @@ async function solve(data = {}) {
       },
       redirect: "follow",
       body: JSON.stringify(data),
-    });
+    })
 
-    const result = await response.json();
+    if (!response.ok) {
+        resultOutput.innerHTML = response.statusText;
+        throw new Error(response.statusText)
+    }
 
-    return result;
+    const contentType = response.headers.get("content-type");
+    console.log(contentType);
+    if (!contentType || !contentType.includes("application/json")) {
+        resultOutput.innerHTML = "not json!";
+        throw new TypeError("Oops, we haven't got JSON!");
+    }
+
+    const json = await response.json();
+
+    return json;
 }
 
 app.post = (target, numbers) => {
@@ -54,7 +66,7 @@ app.post = (target, numbers) => {
     let response = solve(data);
     console.log('response: ', response);
 
-    resultOutput.innerHTML = response;
+    resultOutput.innerHTML = response.message;
 };
 
 app.parse_target = (value) => {
