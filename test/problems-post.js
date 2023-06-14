@@ -1,6 +1,10 @@
+#!/usr/bin/env node --no-warnings
+
 //
 // this is similar to what is on the client page
 //
+
+'use strict';
 
 const postData = async () => {
   try {

@@ -1,5 +1,10 @@
+#!/usr/bin/env node --no-warnings
+
+//
 // ping with node
 //
+
+'use strict';
 const postData = async () => {
   try {
     const data = {
