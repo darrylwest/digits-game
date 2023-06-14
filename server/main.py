@@ -36,8 +36,6 @@ async def solve(problem: Problem):
 
     return {"result": result}
 
-
-
 def find_operations(numbers, target):
     operations = ['+', '-', '*']
     for n in range(1, len(numbers)+1):

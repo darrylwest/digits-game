@@ -1,4 +1,4 @@
-const APP_VERSION = "0.1.2"
+const APP_VERSION = "0.1.8"
 
 // define the components
 const submitButton = document.querySelector('#submit-button');
@@ -6,6 +6,9 @@ const targetInput = document.querySelector('#targetInput');
 const numbersInput = document.querySelector('#numbersInput');
 const resultOutput = document.querySelector('#resultOutput');
 const footerMessage = document.querySelector('#footerMessage');
+
+targetInput.value = "271";
+numbersInput.value = "3 4 6 7 8 11";
 
 // application namespace
 const app = { };
@@ -22,19 +25,24 @@ async function ping() {
 }
 
 async function solve(data = {}) {
-    url = 'http://127.0.0.1:9890/problems');
+    url = 'http://127.0.0.1:9890/problems';
+    console.log(url, data);
+
     const response = await fetch(url, {
       method: "POST",
       mode: "cors",
       cache: "no-cache",
+      credentials: "omit",
       headers: {
-        "Content-Type": "application/jason",
+        "Content-Type": "application/json",
       },
       redirect: "follow",
       body: JSON.stringify(data),
     });
 
-    return response.json();
+    const result = await response.json();
+
+    return result;
 }
 
 app.post = (target, numbers) => {
@@ -43,7 +51,10 @@ app.post = (target, numbers) => {
     data = { target, numbers };
     console.log("posting", data);
 
-    solve(data);
+    let response = solve(data);
+    console.log('response: ', response);
+
+    resultOutput.innerHTML = response;
 };
 
 app.parse_target = (value) => {
