@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from itertools import permutations, product
+from config import Config
 
 import logging as log
 # from fastapi.logger import logger as log
@@ -14,32 +15,25 @@ class Problem(BaseModel):
     target: int
     numbers: list
     
-app = FastAPI()
+config = Config()
 
-# todo: read this from config file
-origins = [ 
-    "http://localhost",
-    "http://localhost:9800",
-    "http://plaza.local",
-    "http://plaza.local:9800",
-    "http://piedmont",
-    "http://piedmont:9800",
-]
+app = FastAPI(title="DigitsGameSolver")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=config.origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+
 @app.get("/")
-async def home():
+async def home() -> dict:
     return {"message":"howdy fastapi with cors enabled?"}
 
 @app.post("/problems")
-async def solve(problem: Problem):
+async def solve(problem: Problem) -> dict:
     # todo: add console logging
     # print(problem)
     log.info(problem)
