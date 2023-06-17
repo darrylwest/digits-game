@@ -98,3 +98,18 @@ target = 447
 numbers = [ 9, 15, 17, 21, 24, 25,]
 result = "24*25-9*17"
 
+[[game]]
+target = 252
+numbers = [6, 9, 11, 15, 20, 25]
+result = "6-9+11*25-20"
+
+[[game]]
+target = 389
+numbers = [3, 5, 6, 15, 20, 22]
+result = "-3*15-6+20*22"
+
+[[game]]
+target = 411
+numbers = [4, 12, 15, 17, 20, 25]
+result = "4+12+15*25+20"
+
