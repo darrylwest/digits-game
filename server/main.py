@@ -20,7 +20,7 @@ config = Config()
 app = FastAPI(
         title="DigitsGameSolver",
         description="""Visit port 8088/docs for the API Documentation""",
-        version="0.0.3"
+        version="0.0.4"
     )
 
 app.add_middleware(

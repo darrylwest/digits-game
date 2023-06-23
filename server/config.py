@@ -1,3 +1,4 @@
+import os
 
 class Config():
     origins = [ 
@@ -8,4 +9,7 @@ class Config():
         "http://piedmont",
         "http://piedmont:9800",
     ]
+    host = os.environ["LOCAL_IP"]
+    port = 9890
+
 
