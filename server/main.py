@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from itertools import permutations, product
-from config import Config
+from server.config import Config
 
 import logging as log
 # from fastapi.logger import logger as log

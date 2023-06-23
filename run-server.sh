@@ -10,5 +10,5 @@ HOST=$LOCAL_IP
 
 # --workers 4 # this is ignored when --reload is used
 
-uvicorn --port 9890 --host $HOST --app-dir server main:app --reload 
+uvicorn --port 9890 --host $HOST 'server.main:app' --reload 
 
