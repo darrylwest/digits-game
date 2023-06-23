@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from itertools import permutations, product
-from server.config import Config
+from server.config import AppConfig
 
 import logging as log
 # from fastapi.logger import logger as log
@@ -15,7 +15,7 @@ class Problem(BaseModel):
     target: int
     numbers: list
     
-config = Config()
+config = AppConfig()
 
 app = FastAPI(
         title="DigitsGameSolver",

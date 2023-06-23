@@ -4,7 +4,7 @@
 
 import begin
 import uvicorn
-import server.config
+from server.config import AppConfig
 import server.main
 
 @begin.start
