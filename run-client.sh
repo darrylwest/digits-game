@@ -5,9 +5,7 @@
 
 set -eu
 
-cd web
-
 # should replace this with caddy proxy with certs to prepare for production
 
-python3 -m http.server 9800
+python3 -m http.server --bind 0.0.0.0 -d web/ 9800
 
