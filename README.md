@@ -1,4 +1,6 @@
-# Digits Game
+# Digits Game Solver
+
+Digits is an on-line game hosted by the New York Times that challenges the user to solve the factors of a single number with six other numbers.  This application (web and CLI) solves the number puzzles.
 
 ## solve-digits
 
@@ -57,4 +59,4 @@ Source: Conversation with Bing, 6/12/2023
 * [javascript fetch](https://javascript.info/fetch)
 * [favicon builder](https://favicon.io/favicon-generator/)
 
-###### darryl.west | 2023.06.14
+###### darryl.west | 2023.07.25
